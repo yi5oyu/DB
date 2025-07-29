@@ -2,10 +2,10 @@
 
 # **DataBase**
 
-    데이터베이스를 이해하고 잘 사용하기 위한 문서
+데이터베이스를 이해하고 잘 사용하기 위한 문서
     
 
-[환경설정](https://github.com/yi5oyu/DB/tree/main/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95) • [SQL]() • []()
+[환경설정](https://github.com/yi5oyu/DB/tree/main/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95) • [SQL](https://github.com/yi5oyu/DB/blob/main/SQL/README.md) • [Spring Boot](https://github.com/yi5oyu/DB/blob/main/Spring%20Boot/README.md)
 
 ## 목차
 
