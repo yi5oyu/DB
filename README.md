@@ -1,24 +1,17 @@
 <div align="center">
 
-# **DataBase**
+# **DB(DataBase)**
 
-데이터베이스를 이해하고 잘 사용하기 위한 문서
+    데이터 저장소
+    여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합
     
 
 [환경설정](https://github.com/yi5oyu/DB/tree/main/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95) • [SQL](https://github.com/yi5oyu/DB/blob/main/SQL/README.md) • [Spring Boot](https://github.com/yi5oyu/DB/blob/main/Spring%20Boot/README.md)
 
-## 목차
-
-[DBMS](#dbmsdatabase-management-system) • [RDB](#관계형-데이터베이스rdb) • [SQL](#sqlstructured-query-language) • [트랜잭션](#트랜잭션transaction) • [인덱스](#인덱스index) • [NoSQL](#nosqlnot-only-sql) • [클라우드 DB](#클라우드-데이터베이스) • [Web Storage](#web-storage)
+| [DBMS](#dbmsdatabase-management-system) • [RDB](#관계형-데이터베이스rdb) • [SQL](#sqlstructured-query-language) • [트랜잭션](#트랜잭션transaction) • [인덱스](#인덱스index) • [NoSQL](#nosqlnot-only-sql) • [클라우드 DB](#클라우드-데이터베이스) • [Web Storage](#web-storage) |
 
 </div>
 
-    
-# DB(DataBase)
-
-    데이터 저장소
-    여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합
- 
 ## 메모리 vs 파일 vs DB
 
 | 구분 | 메모리 저장 | 파일 저장 | 데이터베이스 저장 |
