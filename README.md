@@ -2,8 +2,8 @@
 
 # **DB(DataBase)**
 
-    데이터 저장소
-    여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합
+데이터 저장소     
+여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합
     
 
 [환경설정](https://github.com/yi5oyu/DB/tree/main/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95) • [SQL](https://github.com/yi5oyu/DB/blob/main/SQL/README.md) • [Spring Boot](https://github.com/yi5oyu/DB/blob/main/Spring%20Boot/README.md)
