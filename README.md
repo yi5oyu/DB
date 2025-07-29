@@ -1,3 +1,19 @@
+<div align="center">
+
+# **데이터베이스**
+
+    데이터베이스의 기본 개념부터 관계형 모델, NoSQL, 클라우드 DB까지 다루는 종합 가이드입니다.
+    실무에서 필요한 SQL, 트랜잭션, 인덱스, 성능 최적화 등의 핵심 개념을 체계적으로 정리했습니다.
+
+[환경설정]() • [SQL]() • []()
+
+## 목차
+
+[DBMS](#dbmsdatabase-management-system) • [RDB](#관계형-데이터베이스rdb) • [SQL](#sqlstructured-query-language) • [트랜잭션](#트랜잭션transaction) • [인덱스](#인덱스index) • [NoSQL](#nosqlnot-only-sql) • [클라우드 DB](#클라우드-데이터베이스) • [Web Storage](#web-storage)
+
+</div>
+
+    
 # DB(DataBase)
 
     데이터 저장소
@@ -361,11 +377,167 @@ EXPLAIN SELECT * FROM users WHERE email = 'a@gmail.com';
 
 > B-Tree(Balanced-Tree): 대용량 데이터를 효율적으로 저장하고 검색할 수 있도록 설계된 균형 트리(자가 균형 트리)
 
-<!-- ## NoSQL -->
+## NoSQL(Not Only SQL)
 
-<!-- ## Web Storage
-### localStorage와 sessionStorage
-### IndexedDB  
-### 웹 저장소 vs 서버 DB
-### 실무 활용 패턴
--->
+    관계형 모델을 사용하지 않는 데이터베이스 시스템
+    유연한 스키마와 수평 확장성을 제공하여 대용량, 고성능 애플리케이션에 적합
+
+### NoSQL 종류
+
+| 분류 | 특징 | 데이터 저장 방식 | 대표 DB | 주요 용도 |
+|------|------|------------------|---------|-----------|
+| **문서형(Document)** | JSON/XML 문서 저장 | 중첩된 구조 | MongoDB, CouchDB | 콘텐츠 관리, API |
+| **키-값(Key-Value)** | 단순한 키-값 쌍 | 해시 테이블 | Redis, DynamoDB | 캐시, 세션 저장 |
+| **컬럼형(Column-Family)** | 컬럼 기반 저장 | 희소 행렬 | Cassandra, HBase | 시계열 데이터, 로그 |
+| **그래프(Graph)** | 노드와 엣지 | 그래프 구조 | Neo4j, ArangoDB | 관계 분석, 추천 |
+
+### 관계형 데이터베이스 vs NoSQL
+
+| 구분 | RDBMS | NoSQL |
+|------|-------------------|-------|
+| **스키마** | 고정 스키마 | 유연한 스키마 |
+| **확장성** | 수직 확장(Scale-Up) | 수평 확장(Scale-Out) |
+| **일관성** | 강한 일관성(ACID) | 최종 일관성(BASE) |
+| **쿼리** | 복잡한 SQL, JOIN | 단순한 쿼리, No JOIN |
+| **트랜잭션** | 완전한 ACID 지원 | 제한적 트랜잭션 |
+| **성능** | 복잡한 쿼리에 강함 | 단순한 읽기/쓰기에 강함 |
+
+## 클라우드 데이터베이스
+
+    클라우드 환경에서 제공되는 데이터베이스 서비스
+    인프라 관리 부담을 줄이고 확장성, 가용성, 보안을 향상시킴
+
+### 클라우드 DB 서비스 유형
+
+| 서비스 모델 | 설명 | 관리 범위 | 유연성 | 대표 서비스 |
+|-------------|------|-----------|--------|-------------|
+| **IaaS** | 가상머신에 DB 설치 | 사용자가 모든 것 관리 | 높음 | EC2 + MySQL |
+| **DBaaS** | 완전 관리형 DB 서비스 | 클라우드 업체가 관리 | 중간 | RDS, Cloud SQL |
+| **Serverless** | 서버리스 DB | 자동 스케일링 | 낮음 | Aurora Serverless |
+
+#### AWS(Amazon Web Services)
+
+| 서비스 | DB 유형 | 특징 | 용도 |
+|--------|---------|------|------|
+| **RDS** | 관계형 | MySQL, PostgreSQL, Oracle 지원 | 일반적인 웹 애플리케이션 |
+| **DynamoDB** | NoSQL (키-값) | 완전 관리형, 밀리초 지연시간 | 게임, IoT, 모바일 |
+| **Aurora** | 관계형 | MySQL/PostgreSQL 호환, 고성능 | 엔터프라이즈 애플리케이션 |
+| **DocumentDB** | NoSQL (문서형) | MongoDB 호환 | 콘텐츠 관리, 카탈로그 |
+| **ElastiCache** | 인메모리 | Redis, Memcached 지원 | 캐싱, 세션 저장 |
+
+## Web Storage
+
+    웹 브라우저에서 클라이언트 데이터 저장을 위한 기술
+    서버 DB와 함께 사용하여 성능 최적화와 사용자 경험 향상
+    
+### localStorage vs sessionStorage vs Cookie
+
+    HTML5 브라우저에서 제공하는 키-값 형태의 간단한 저장소
+    서버 요청 없이 클라이언트에서 빠른 데이터 접근 가능
+
+| 구분 | localStorage | sessionStorage | Cookie |
+|------|--------------|----------------|--------|
+| **지속성** | 명시적 삭제 전까지 영구 저장 | 브라우저 탭 닫으면 삭제 | 설정한 만료일까지 |
+| **용량** | 5-10MB | 5-10MB | 4KB |
+| **공유 범위** | 같은 도메인의 모든 탭/창 | 해당 탭/창만 | 같은 도메인의 모든 탭/창 |
+| **서버 전송** | X | X | 자동 전송 |
+| **보안 옵션** | X | X | httpOnly, secure 등 |
+| **사용 편의성** | 쉬움 | 쉬움 | 복잡 |
+| **주요 용도** | 사용자 설정, 장바구니, 테마 | 임시 데이터, 폼 입력값 | 인증, 추적, 서버 통신 |
+
+#### localStorage
+
+    사용자 설정, 캐시 데이터, 오프라인 지원 등에 사용
+
+```javascript
+// 데이터 저장
+localStorage.setItem('username', 'a');
+localStorage.setItem('settings', JSON.stringify({
+    theme: 'dark',
+    language: 'ko',
+}));
+
+// 데이터 조회
+const username = localStorage.getItem('username');
+const settings = JSON.parse(localStorage.getItem('settings'));
+
+// 데이터 삭제
+localStorage.removeItem('username');
+// 모든 데이터 삭제
+localStorage.clear();
+
+// 키 존재 확인
+if (localStorage.getItem('theme') !== null) {
+    // 테마 설정
+}
+```
+
+#### sessionStorage
+
+    임시 데이터, 폼 상태, 탭별 독립 데이터 저장
+
+```javascript
+// 데이터 저장 
+sessionStorage.setItem('currentUser', 'a');
+sessionStorage.setItem('formData', JSON.stringify({
+    title: '임시 제목',
+    content: '작성 중인 내용...',
+}));
+
+// 데이터 조회
+const currentUser = sessionStorage.getItem('currentUser');
+const formData = JSON.parse(sessionStorage.getItem('formData'));
+
+// 데이터 삭제
+sessionStorage.removeItem('currentUser');
+// 모든 데이터 삭제
+sessionStorage.clear(); 
+// 탭 닫으면 삭제
+
+// 키 존재 확인
+if (sessionStorage.getItem('formData') !== null) {
+    // 임시 저장된 폼 데이터가 있음
+}
+```
+
+#### Cookie
+
+    서버와 클라이언트 간 상태 정보 공유, 인증 토큰 저장
+
+```javascript
+// 쿠키 설정
+document.cookie = "username=a; expires=Thu, 18 Dec 2024 12:00:00 UTC; path=/";
+document.cookie = "theme=dark; max-age=3600; secure; samesite=strict";
+
+// 쿠키 조회
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
+}
+const username = getCookie('username');
+
+// 쿠키 삭제(만료일을 과거로 설정)
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+// 쿠키 옵션
+// expires: 만료일 설정
+// max-age: 초 단위 수명 설정  
+// secure: HTTPS에서만 전송
+// httpOnly: JavaScript 접근 차단 (서버에서만 설정 가능)
+// samesite: CSRF 공격 방지 (strict, lax, none)
+```
+
+### IndexedDB 
+
+    브라우저의 고성능 NoSQL 데이터베이스
+    대용량 구조화된 데이터 저장과 복잡한 쿼리 지원
+
+| 특징 | 설명 | 장점 | 단점 |
+|------|------|------|------|
+| **용량** | 수 GB (하드웨어 용량의 50% 이상) | 대용량 데이터 처리 | 메모리 사용량 높음 |
+| **데이터 타입** | 객체, 배열, 파일, Blob 등 | 복잡한 데이터 구조 | 직렬화 필요 |
+| **트랜잭션** | ACID 지원 | 데이터 일관성 보장 | 복잡한 API |
+| **인덱스** | 다중 인덱스 지원 | 빠른 검색 | 인덱스 설계 필요 |
+| **비동기** | Promise/async-await 지원 | 메인 스레드 블로킹 없음 | 콜백 지옥 가능성 |
