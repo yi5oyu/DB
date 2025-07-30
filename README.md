@@ -6,7 +6,7 @@
 여러 사람이 공유하여 사용할 목적으로 체계화해 통합, 관리하는 데이터의 집합
     
 
-[환경설정](https://github.com/yi5oyu/DB/tree/main/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95) • [SQL](https://github.com/yi5oyu/DB/blob/main/SQL/README.md) • [DB 접근 기술](#https://github.com/yi5oyu/DB/blob/main/%EC%A0%91%EA%B7%BC%EA%B8%B0%EC%88%A0.md)
+[환경설정](https://github.com/yi5oyu/DB/tree/main/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95) • [SQL](https://github.com/yi5oyu/DB/blob/main/SQL/README.md) • [DB 접근 기술](https://github.com/yi5oyu/DB/blob/main/%EC%A0%91%EA%B7%BC%EA%B8%B0%EC%88%A0.md)
 
 | [DBMS](#dbmsdatabase-management-system) • [RDB](#관계형-데이터베이스rdb) • [SQL](#sqlstructured-query-language) • [트랜잭션](#트랜잭션transaction) • [인덱스](#인덱스index) • [NoSQL](#nosqlnot-only-sql) • [클라우드 DB](#클라우드-데이터베이스) • [Web Storage](#web-storage) |
 
