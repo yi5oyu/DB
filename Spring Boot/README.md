@@ -2,7 +2,7 @@
 
 # **Java Spring Boot 데이터베이스 접근 기술**
 
-| [JDBC](#jdbc-java-database-connectivity) • [Spring JDBC Template](#spring-jdbc-template) • [ORM](#orm-object-relational-mapping) • [Hibernate](#하이버네이트hibernate) • [JPA](#jpa-java-persistence-api) • [Spring Data JPA](#spring-data-jpa) • [MyBatis](#mybatis) • [하이브리드](#spring-data-jpa-vs-mybatis) |
+| [JDBC](#jdbcjava-database-connectivity) • [Spring JDBC Template](#spring-jdbc-template) • [ORM](#ormobject-relational-mapping) • [Hibernate](#하이버네이트hibernate) • [JPA](#jpa-java-persistence-api) • [Spring Data JPA](#spring-data-jpa) • [MyBatis](#mybatis) • [하이브리드](#spring-data-jpa-vs-mybatis) |
 
 </div>
 
