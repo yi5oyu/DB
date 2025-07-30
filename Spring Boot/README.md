@@ -2,7 +2,7 @@
 
 # **Java Spring Boot 데이터베이스 접근 기술**
 
-| [JDBC](#jdbc-java-database-connectivity) • [Spring JDBC Template](#spring-jdbc-template) • [ORM](#orm-object-relational-mapping) • [Hibernate](#하이버네이트hibernate) • [JPA](#jpa-java-persistence-api) • [Spring Data JPA](#spring-data-jpa) • [MyBatis](#mybatis) |
+| [JDBC](#jdbc-java-database-connectivity) • [Spring JDBC Template](#spring-jdbc-template) • [ORM](#orm-object-relational-mapping) • [Hibernate](#하이버네이트hibernate) • [JPA](#jpa-java-persistence-api) • [Spring Data JPA](#spring-data-jpa) • [MyBatis](#mybatis) • [하이브리드](#spring-data-jpa-vs-mybatis) |
 
 </div>
 
@@ -258,6 +258,7 @@ public interface UserMapper {
 | **빠른 개발** | 자동 생성으로 빠름 | SQL 작성 시간 | **Spring Data JPA** |
 | **기존 SQL 활용** | 변환 작업 필요 | 그대로 사용 | **MyBatis** |
 
+> 하이브리드      
 > 단순 CRUD는 Spring Data JPA 활용       
 > 복잡한 쿼리, 성능 최적화가 필요한 경우 MyBatis 사용
 
