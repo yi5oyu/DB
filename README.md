@@ -336,6 +336,52 @@ WHERE 조건;
 > 트랜잭션 A: 테이블1 락 획득 -> 테이블2 락 대기, 트랜잭션 B: 테이블2 락 획득 -> 테이블1 락 대기              
 > 락 획득 순서 통일/데드락 감지 후 한 트랜잭션 강제 종료           
 
+### Spring Boot
+
+#### [@Transactional](https://github.com/yi5oyu/Study/blob/main/SpringBoot/%EC%96%B4%EB%85%B8%ED%85%8C%EC%9D%B4%EC%85%98/%40Transactional)
+
+`AOP(Aspect-Oriented Programming) 프록시 패턴을 통해 동작`
+
+```
+1. 객체 생성
+ - @Component, @Service 등이 붙은 클래스 원본 객체 생성/의존성 주입
+2. 초기화 후 빈 후처리기(Bean Post Processor)
+ - 프록시 생성 및 교체(생성된 빈을 컨테이너에 등록하기 직전에 가로채서 실제 객체 대신 프록시 객체를 빈으로 등록)
+  > JDK Dynamic Proxy or CGLIB 프록시 사용
+3. 프록시 객체 빈 등록
+```
+
+##### 트랜잭션 전파
+
+`이미 트랜잭션이 진행 중일 때 새로운 트랜잭션을 어떻게 처리할지 결정`
+
+```
+/*
+    REQUIRED(기본값)
+    진행 중인 트랜잭션이 있으면 -> 트랜잭션에 참여
+    진행 중인 트랜잭션이 없으면 -> 새 트랜잭션 생성
+    Spring(TransactionSynchronizationManager)이 ThreadLocal을 사용해서 현재 스레드에 트랜잭션 정보 저장
+*/
+@Service
+public class AService {
+    @Autowired
+    private BService bService;
+
+    @Autowired
+    private ARepository aRepository;
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void a() {
+        aRepository.save(aaa);
+        
+        // 다른 서비스 호출(트랜잭션 전파 발생)
+        bService.b(); 
+        
+        bRepository.save(bbb);
+    }
+}
+```
+
 ## [인덱스(Index)](https://github.com/yi5oyu/Study/blob/main/DB/%EC%84%B1%EB%8A%A5%20%EC%B5%9C%EC%A0%81%ED%99%94/1.%20%EC%9D%B8%EB%8D%B1%EC%8A%A4)
 
     데이터베이스에서 테이블의 검색 속도를 높이기 위해 사용하는 별도의 정렬된 자료구조
