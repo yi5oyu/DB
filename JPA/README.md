@@ -211,7 +211,6 @@ public void a() {
 // @Transactional 사용으로 트랜잭션 코드 안써도 됨
 
 @Service
-@RequiredArgsConstructor
 public class AService {
     // Spring 컨테이너에서 관리하는 미리 만들어진 프록시 객체 주입
     @PersistenceContext
